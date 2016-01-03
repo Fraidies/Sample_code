@@ -11,5 +11,5 @@ Assignment1_gameOfLife:
 
 
 Assignment3_delimChecker:
-	I provided this as an example of a simpler program with considerably more effort placed into readability with use of different data structures.
+	I provided this as an example of a simpler program with considerably more effort placed into quality with use of different data structures.
  
