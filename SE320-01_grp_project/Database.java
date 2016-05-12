@@ -20,8 +20,8 @@ public class Database {
      */
     Database() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/groceries?autoReconnect=true&useSSL=false", "root", "Cocokai1");
+            Class.forName("*******************");
+            con = DriverManager.getConnection("*********************************", "********", "*********");
             sm = con.createStatement();
         } catch (ClassNotFoundException e) {
             System.out.print("Error: Driver not found");

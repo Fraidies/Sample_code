@@ -13,7 +13,7 @@ public class DatabaseTest {
 	public void test1() {
 		Database d = new Database();
 		d.createTables();
-		assertEquals(d.register(0, "'--matthewthelms@yahoo.com", "matthew", "helms", "8313349275", "matt", "matt"), false);
+		assertEquals(d.register(0, "'****************", "*******", "*****", "***********", "****", "****"), false);
 		d.close();
 	}
 	
@@ -21,7 +21,7 @@ public class DatabaseTest {
 	public void test2() {
 		Database d = new Database();
 		d.createTables();
-		assertEquals(d.register(0, "matthewthelms@yahoo.com", "matthew", "helms", "8313349275", "matt", "matt"), true);
+		assertEquals(d.register(0, "'****************", "*******", "*****", "***********", "****", "****"), true);
 		d.close();
 	}
 	
@@ -29,8 +29,8 @@ public class DatabaseTest {
 	public void test3() {
 		Database d = new Database();
 		d.createTables();
-		d.register(0, "matthewthelms@yahoo.com", "matthew", "helms", "8313349275", "matt", "matt");
-		assertEquals(d.register(0, "matthewthelms@yahoo.com", "matthew", "helms", "8313349275", "matt", "matt"), false);
+		d.register(0, "'****************", "*******", "*****", "***********", "****", "****");
+		assertEquals(d.register(0, "'****************", "*******", "*****", "***********", "****", "****"), false);
 		d.close();
 	}
 	
@@ -38,7 +38,7 @@ public class DatabaseTest {
 	public void test4() {
 		Database d = new Database();
 		d.createTables();
-		assertEquals(d.register(0, "matthewthelms@yahoo.com", "matthew", "helms", "8313349275", "matt1", "matt"), false);
+		assertEquals(d.register(0, "'****************", "*******", "*****", "***********", "****", "****"), false);
 		d.close();
 	}
 	
@@ -46,7 +46,7 @@ public class DatabaseTest {
 	public void test5() {
 		Database d = new Database();
 		d.createTables();
-		assertEquals(d.register(0, "matthewthelms@yahoo.com", "matthew", "helms", "", "", "matt"), false);
+		assertEquals(d.register(0,"'****************", "*******", "*****", "***********", "****", "****"), false);
 		d.close();
 	}
 	
@@ -54,9 +54,9 @@ public class DatabaseTest {
 	public void test6() {
 		Database d = new Database();
 		d.createTables();
-		d.register(1, "matthewthelms@yahoo.com", "matthew", "helms", "8313349275", "matt", "matt");
+		d.register(1, "'****************", "*******", "*****", "***********", "****", "****");
 		d.showUsers();
-		assertEquals(d.completeRegistration(1, "234b1"), true);
+		assertEquals(d.completeRegistration(1, "*****"), true);
 		d.close();
 	}
 	
@@ -64,9 +64,9 @@ public class DatabaseTest {
 	public void test7() {
 		Database d = new Database();
 		d.createTables();
-		d.register(1, "matthewthelms@yahoo.com", "matthew", "helms", "8313349275", "matt", "matt");
+		d.register(1, "'****************", "*******", "*****", "***********", "****", "****");
 		d.showUsers();
-		assertEquals(d.completeRegistration(1, "234b1'--"), false);
+		assertEquals(d.completeRegistration(1, "****'--"), false);
 		d.close();
 	}
 	
@@ -101,8 +101,8 @@ public class DatabaseTest {
 	public void test10() {
 		Database d = new Database();
 		d.createTables();
-		d.register(1, "matthewthelms@yahoo.com", "matthew", "helms", "8313349275", "matt", "matt");
-		assertEquals(d.login("matthewthelms@yahoo.com", "matt"), "1");
+		d.register(1, "'****************", "*******", "*****", "***********", "****", "****");
+		assertEquals(d.login("*****************", "*****"), "*");
 		d.close();
 	}
 	
@@ -110,7 +110,7 @@ public class DatabaseTest {
 	public void test11() {
 		Database d = new Database();
 		d.createTables();
-		assertEquals(d.login("matthewthelms@yahoo.com", "wrongpassword"), "-1");
+		assertEquals(d.login("*********************", "*********"), "-1");
 		d.close();
 	}
 	
@@ -118,7 +118,7 @@ public class DatabaseTest {
 	public void test12() {
 		Database d = new Database();
 		d.createTables();
-		assertEquals(d.login("matthewthelms@yahoo.com", "wrongpassword'---"), "-1");
+		assertEquals(d.login("***********************", "*************'---"), "-1");
 		d.close();
 	}
 
