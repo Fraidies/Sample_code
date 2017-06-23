@@ -15,4 +15,4 @@ Assignment3_delimChecker:
 
 
  SE320-01_grp_project
-	This was a gorup project I contributed to in a "Software Development Lifecycle" class. I contributed to the architecture of our project, as well as junit testing and portions of the design document such as the class and component diagrams. I also secured and conducted an interview for our user stories and requirements.
+	This was a gorup project I contributed to in a "Software Development Lifecycle" class. I contributed to the architecture of our project, as well as junit testing and portions of the design document such as the class and component diagrams.
